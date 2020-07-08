@@ -5,9 +5,9 @@ rm(list=ls())#Limpia objetos
 fecStart <-Sys.time()
 setwd(dirname(getActiveDocumentContext()$path))
 #Cambiar en cada Ejecucion
-fecCierre <- as.Date("30/11/2019", format = "%d/%m/%Y")  
-directorioBD <- "C:/Ronald/Auditorias/Rimac/SBS/112019/RRVV/CIA"
-nombreBD <- "Tramas_RRVV_112019.xlsx"
+fecCierre <- as.Date("31/12/2019", format = "%d/%m/%Y")  
+directorioBD <- "C:/Ronald/Auditorias/Rimac/SBS/122019/RRVV/CIA"
+nombreBD <- "Trama_RRVV_122019.xlsx"
 
 Tramas_RRVV_TIT <- read_excel(paste(directorioBD,nombreBD,sep = "/"), 
                                  sheet = "Poliza", col_types = c("date","text", "text", "text", "date",  
