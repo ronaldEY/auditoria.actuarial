@@ -1,6 +1,6 @@
 library(rstudioapi)#Para obtener ruta en el directorio
 library(readxl)#Leer Excel
-library(lubridate)#Obtener a?o
+library(lubridate)#Obtener año
 rm(list=ls())#Limpia objetos
 fecStart <-Sys.time()
 setwd(dirname(getActiveDocumentContext()$path))
