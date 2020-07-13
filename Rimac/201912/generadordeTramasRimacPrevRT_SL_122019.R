@@ -1,13 +1,15 @@
 library(rstudioapi)#Para obtener ruta en el directorio
 library(readxl)#Leer Excel
-library(lubridate)#Obtener año
+library(lubridate)#Obtener a?o
 rm(list=ls())#Limpia objetos
 fecStart <-Sys.time()
 setwd(dirname(getActiveDocumentContext()$path))
 #Cambiar en cada Ejecucion
 fecCierre <- as.Date("31/12/2019", format = "%d/%m/%Y")  
+directorioBD <- "C:/Ronald/Auditorias/Rimac/SBS/122019/Previsionales/CIA"
+nombreBD <- "PREVISIONALES_122019.xlsx"
 
-Tramas_TIT <- read_excel("CIA/PREVISIONALES_122019.xlsx", 
+Tramas_TIT <- read_excel(paste(directorioBD,nombreBD,sep = "/"), 
                               sheet = "Poliza", col_types = c("date", 
                                                               "numeric", "text", "numeric", "date", 
                                                               "date", "text", "text", "text", "text", 
@@ -24,7 +26,7 @@ Tramas_TIT <- read_excel("CIA/PREVISIONALES_122019.xlsx",
 Tramas_TIT <- Tramas_TIT[Tramas_TIT$EXPREV_REGIMEN=="T" & Tramas_TIT$EXPREV_TIPO_RVA =="SL",]          
 
 
-Tramas_BEN <- read_excel("CIA/PREVISIONALES_122019.xlsx", 
+Tramas_BEN <- read_excel(paste(directorioBD,nombreBD,sep = "/"), 
                          sheet = "Beneficiario", col_types = c("numeric", 
                                                                "text", "text", "text", "text", "text", 
                                                                "text", "text", "date", "date", "text", 
@@ -181,6 +183,6 @@ dfValidador$TIPO_SINIESTRO<-NULL
 dfValidador$PRESTACION<-NULL
 #View(dfValidador)
 library(openxlsx)
-write.xlsx(dfValidador, file=paste("BaseRRVV_RIMAC_RT_",as.character(fecCierre,format = "%m%Y"),".xlsx",sep=""))
+write.xlsx(dfValidador, file=paste(directorioBD,"/../BaseRRVV_RIMAC_RT_",as.character(fecCierre,format = "%m%Y"),".xlsx",sep=""))
 fecEnd <-Sys.time()
 print(paste("Inicio:",format(fecStart,"%H:%M:%S"),"Fin:",format(fecEnd,"%H:%M:%S")))
