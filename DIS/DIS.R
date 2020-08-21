@@ -70,7 +70,7 @@ BD_DIS <- read_excel(paste(directorioBD,nombreBD,sep = "/"),
                                                                              "numeric","numeric","numeric","numeric","numeric",
                                                                              "numeric","numeric","numeric","numeric","numeric",
                                                                              "numeric","numeric","date","text","text"))
-View(BD_DIS)
+#View(BD_DIS)
 BD_DIS_TIT <- BD_DIS[BD_DIS$`Tipo de pensionista` == "T" & BD_DIS$`Estado del siniestro a la fecha de reporte`!="Terminado",]
 
 
