@@ -20,7 +20,6 @@ fecHijos28 <- as.Date("01/08/2013", format = "%d/%m/%Y")
 #Colocar en 0 la tasa de ajuste VAC
 #Colocar en Texto en Columnas Pension 
 
-
 BD_RRVV <- read_excel(paste(directorioBD,nombreBD,sep = "/"), 
                       sheet = hojaBD, col_types = c("text","text","text","text",
                                                        "text","text","text","text",
