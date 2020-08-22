@@ -21,6 +21,7 @@ nombreBD <- "RSP_12_2019_C3.xlsx"
 hojaBD <- "12.2019"
 contratoDIS <- "3"
 
+
 fecFallecimiento <- as.Date("01/02/1900", format = "%d/%m/%Y")
 fecProdTablasNueva <- as.Date("01/01/2019", format = "%d/%m/%Y") 
 fecHijos28 <- as.Date("01/08/2013", format = "%d/%m/%Y") 
